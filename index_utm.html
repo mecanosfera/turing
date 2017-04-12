@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>turing</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="jquery-ui.js"></script>
+<script type="text/javascript" src="turing_old.js"></script>
+<script type="text/javascript" src="input.js"></script>
+<style type="text/css">
+body {
+	position: relative;test
+	overlow: visible;
+	width: 1400px;
+}
+
+#machine_wrapper{
+	width: 1400px;
+	overflow: visible;
+	margin-left: 50px;
+	margin-right: auto;
+}
+
+#turing_machine {
+	/*position: relative;*/
+	width: 1400px;
+	margin-left: auto;
+	margin-right: auto;
+	overflow: visible;
+	/*border: 1px solid #ff0000;*/
+}
+
+table {
+	border-style: none;
+	padding: 0px;
+	margin: 0px;
+	/*width: 205px;*/
+	border-collapse: collapse;
+	margin-top: 70px;
+}
+
+table tr {
+	padding: 0px;
+	margin: 0px;
+	list-style: none;
+	height: 40px;
+}
+
+table tr td {
+	margin: 0px;
+	width: 20px;
+	height: 20px;
+	padding: 10px;
+	border: 1px solid #000;
+	border-collapse:collapse;
+	font-size: 14px;
+	vertical-align: middle;
+	text-align: center;
+	line-height: 20px;
+}
+table tr td.c-m_conf{
+	height: 100%;
+}
+
+
+table tr td.c-operation{
+	width: auto;
+}
+
+#skeleton,#instruction,#universal{
+	float: left;
+}
+
+#skeleton,#universal{
+	margin-left: 50px;
+}
+
+#tape {
+	padding: 0px;
+	margin: 0px;
+	border-left: 1px solid #000;
+	position: absolute;
+	list-style: none;
+	width: auto;
+	overflow: visible;
+	width: 100%;
+	/*margin-left: 82px;*/
+	overflow: visible;
+	margin-bottom: 100px;
+}
+
+#registrer {
+	height: 51px;
+	display: none;
+}
+
+#state {
+	width: 20px;
+	height: 20px;
+	padding: 12px;
+	border: 3px solid #666;
+	margin-top: 5px;
+	text-align: center;
+}
+
+#head {
+	width: 20px;
+	height: 20px;
+	padding: 12px;
+	border: 3px solid #666;
+	border-top-style: none;
+	text-align: center;
+	position: relative;
+	z-index: 5;
+}
+
+#state,#head{
+	margin-left: 242px;
+}
+
+#tape li {
+	float: left;
+	margin: 0px;
+	border: 1px solid #000;
+	border-left-style: none;
+	padding: 10px;
+	width: 20px;
+	height: 20px;
+	vertical-align: middle;
+	text-align: center;
+	line-height: 20px;
+}
+
+#add {
+	width: 40px;
+	height: 40px;
+	position: relative;
+	background-color: #ccc;
+	border: 1px solid #666;
+	text-align: center;
+	vertical-align: center;
+	line-height: 40px;
+	font-size: 16px;
+	color: #666;
+	font-weight: bold;
+	float: right;
+	cursor: pointer;
+	display: none;
+}
+
+#left{
+	float: left;
+}
+
+.ativo{
+	background-color: #ff0000;
+}
+
+#compiled_str{
+	display: block;
+	width: 250px;
+	overflow: hidden;
+}
+
+
+#grid{
+	float: left;
+	width: 1260px;
+	padding: 0px;
+	margin: 0px;
+	border-left: 1px solid #000;
+	border-top: 1px solid #000;
+	list-style: none;
+	position: relative;
+}
+
+#grid li{
+	margin: 0px;
+	width: 10px;
+	height: 10px;
+	float: left;
+	padding: 5px;
+	border-bottom: 1px solid #000;
+	border-right: 1px solid #000;
+	font-size: 10px;
+	line-height: 10px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+#grid li.selected{
+	background-color: #ccc;
+	color: #000;
+	font-weight: bold;
+}
+
+.cleaner{
+	clear: both;
+}
+
+</style>
+</head>
+<body>
+	<div id="left">start</div>
+	<div id="compiled_str"></div>
+	<div id="machine_wrapper">
+		<div id="add">+</div>
+		<div id="turing_machine">
+			<ul id="grid"></ul>
+			<div id="registrer">
+				<div id="state"></div>
+				<div id="head"></div>
+			</div>
+			<ul id="tape">
+
+			</ul>
+			<div class='cleaner'></div>
+			<div id="instruction">
+				<table id="configurations"></table>
+				<table id="compiled"></table>
+			</div>
+			<table id="skeleton"></table>
+			<table id="universal"></table>
+			
+		</div>
+	</div>
+</body>
+</html>
+
